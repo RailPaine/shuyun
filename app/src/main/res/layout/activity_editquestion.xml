@@ -9,7 +9,7 @@
     android:layout_height="300dp"
     android:id="@+id/editquestion_ev"
     android:hint="请输入你要问的问题"
-    android:met_maxCharacters="300"
+    app:met_maxCharacters="300"
     />
 
 </LinearLayout>
