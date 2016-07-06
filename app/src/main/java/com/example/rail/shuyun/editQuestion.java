@@ -9,8 +9,16 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.gc.materialdesign.views.ButtonFlat;
+import com.gc.materialdesign.widgets.Dialog;
+import com.rey.material.app.DatePickerDialog;
+
+import me.drakeet.materialdialog.MaterialDialog;
 
 /**
  * Created by rail on 2016/7/6.
@@ -19,11 +27,18 @@ public class editQuestion extends AppCompatActivity {
 
     private ImageView imageView;
     private ImageButton imageButton;
+    private ImageButton back;
+    private ImageButton done;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editquestion);
+        back=(ImageButton)findViewById(R.id.back_titlebar);
+        done=(ImageButton)findViewById(R.id.titlebar_done);
+        title=(TextView)findViewById(R.id.titlebar_title);
+        title.setText("创建问题");
         imageButton=(ImageButton)findViewById(R.id.editquestion_addphoto);
         imageView=(ImageView)findViewById(R.id.editquestion_photo);
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +48,31 @@ public class editQuestion extends AppCompatActivity {
                 startActivityForResult(intent, 1);
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final MaterialDialog mMaterialDialog = new MaterialDialog(editQuestion.this)
+                        .setTitle("提示")
+                        .setMessage("退出创建问题？")
+                        .setPositiveButton("确定", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent=new Intent(editQuestion.this,question.class);
+                                startActivity(intent);
+
+                            }
+                        });
+                mMaterialDialog.setNegativeButton("取消", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                    }
+                });
+
+                mMaterialDialog.show();
+            }
+        });
+
     }
 
     @Override
