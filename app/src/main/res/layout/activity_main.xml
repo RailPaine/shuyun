@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawer"
+    >
+<com.andexert.library.RippleView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<android.support.v7.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:id="@+id/toolbar_main"
+    android:background="@color/colorPrimary"
+    >
+
+</android.support.v7.widget.Toolbar>
+<RelativeLayout
+
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    >
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/university_main"
+           android:text="学校"
+           android:textSize="16sp"
+           android:layout_marginTop="40dp"
+           android:layout_marginLeft="64dp"
+           />
+      <Spinner
+          android:layout_width="130dp"
+          android:layout_height="wrap_content"
+          android:id="@+id/spinner_university_main"
+          android:layout_toRightOf="@+id/school_main"
+          android:layout_marginLeft="40dp"
+          android:layout_marginTop="28dp"
+          android:entries="@array/university"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/school_main"
+        android:text="学院"
+        android:textSize="16sp"
+        android:layout_marginTop="56dp"
+        android:layout_marginLeft="64dp"
+        android:layout_below="@+id/university_main"
+        />
+    <Spinner
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_school_main"
+        android:layout_below="@+id/spinner_university_main"
+        android:layout_toRightOf="@+id/school_main"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:entries="@array/school"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/major_main"
+        android:text="专业"
+        android:textSize="16sp"
+        android:layout_marginTop="56dp"
+        android:layout_marginLeft="64dp"
+        android:layout_below="@+id/school_main"
+        />
+    <Spinner
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_major_main"
+        android:layout_below="@+id/spinner_school_main"
+        android:layout_toRightOf="@+id/school_main"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:entries="@array/major"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/grade_main"
+        android:text="年级"
+        android:textSize="16sp"
+        android:layout_marginTop="56dp"
+        android:layout_marginLeft="64dp"
+        android:layout_below="@+id/major_main"
+        />
+    <Spinner
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_grade_main"
+        android:layout_below="@+id/spinner_major_main"
+        android:layout_toRightOf="@+id/major_main"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:entries="@array/grade"/>
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/grade_main"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="48dp"
+        android:id="@+id/sure_main"
+        android:text="确认"
+        />
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/grade_main"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_toRightOf="@+id/sure_main"
+        android:id="@+id/back_main"
+        android:text="返回"
+        />
+
+</RelativeLayout>
+</com.andexert.library.RippleView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:layout_gravity="start"
+    android:background="#ffffff"
+    >
+    <com.andexert.library.RippleView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.rey.material.widget.ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_drawer"
+        >
+
+    </com.rey.material.widget.ListView>
+    </com.andexert.library.RippleView>
+</LinearLayout>
+</android.support.v4.widget.DrawerLayout>

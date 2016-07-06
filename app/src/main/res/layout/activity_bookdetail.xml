@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="2"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookdetail_name"
+        android:text="书名："
+        android:textSize="24sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookdetail_name_tv"
+        android:textSize="24sp"
+        android:layout_toRightOf="@+id/bookdetail_name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookdetail_author"
+        android:text="作者："
+        android:textSize="24sp"
+        android:layout_below="@+id/bookdetail_name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookdetail_author_tv"
+        android:layout_toRightOf="@+id/bookdetail_author"
+        android:layout_below="@+id/bookdetail_name_tv"
+        android:textSize="24sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookdetail_publish"
+        android:text="出版社："
+        android:textSize="24sp"
+        android:layout_below="@+id/bookdetail_author"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookdetail_publish_tv"
+       android:layout_toRightOf="@+id/bookdetail_publish"
+        android:textSize="24sp"
+        android:layout_below="@+id/bookdetail_author_tv"
+        />
+</RelativeLayout>
+    <com.gc.materialdesign.views.ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="7"
+        >
+
+    </com.gc.materialdesign.views.ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+
+        >
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="书籍介绍"
+            >
+
+        </com.gc.materialdesign.views.ButtonRectangle>
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="社交分享"
+            >
+
+        </com.gc.materialdesign.views.ButtonRectangle>
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="问题解答"
+            android:id="@+id/bookdetail_question"
+            >
+
+        </com.gc.materialdesign.views.ButtonRectangle>
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="资源分享"
+            >
+
+        </com.gc.materialdesign.views.ButtonRectangle>
+    </LinearLayout>
+</LinearLayout>
