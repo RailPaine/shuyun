@@ -1,13 +1,16 @@
 package com.example.rail.shuyun;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.ButtonFloat;
 import com.rey.material.widget.ListView;
 
 import java.util.ArrayList;
@@ -26,16 +29,24 @@ public class question extends AppCompatActivity {
     private TextView question;
     private TextView quetionTime;
     private Toolbar toolbar;
+    private ButtonFloat addQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         initView();
+        addQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(question.this,editQuestion.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView()
-    {
+    {   addQuestion=(ButtonFloat)findViewById(R.id.question_float);
         toolbar=(Toolbar)findViewById(R.id.toolbar_question);
         toolbar.setTitle("问题解答");
         setSupportActionBar(toolbar);

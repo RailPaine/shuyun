@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <com.rengwuxian.materialedittext.MaterialEditText
     android:layout_width="match_parent"
-    android:layout_height="300dp"
+    android:layout_height="200dp"
     android:id="@+id/editquestion_ev"
     android:hint="请输入你要问的问题"
     app:met_maxCharacters="300"
+    android:gravity="top"
     />
-
-</LinearLayout>
+<ImageButton
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:id="@+id/editquestion_addphoto"
+    android:src="@drawable/ic_add_box_white_48dp"
+    android:layout_below="@+id/editquestion_ev"
+    android:layout_marginLeft="10dp"
+    />
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/editquestion_photo"
+        android:layout_below="@+id/editquestion_ev"
+        android:layout_toRightOf="@+id/editquestion_addphoto"
+        android:layout_marginLeft="10dp"
+        android:scaleType="fitXY"
+        />
+</RelativeLayout>

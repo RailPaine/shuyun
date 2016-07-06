@@ -36,6 +36,9 @@
         <activity android:name=".question">
 
         </activity>
+        <activity android:name=".editQuestion">
+
+        </activity>
     </application>
 
 </manifest>
