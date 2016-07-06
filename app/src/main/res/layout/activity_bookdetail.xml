@@ -6,7 +6,7 @@
     >
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_weight="2"
     >
     <TextView
@@ -70,7 +70,7 @@
 </RelativeLayout>
     <com.gc.materialdesign.views.ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
 
         android:layout_weight="7"
         >
@@ -78,7 +78,7 @@
     </com.gc.materialdesign.views.ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="20dp"
         android:orientation="horizontal"
         android:layout_weight="1"
 
