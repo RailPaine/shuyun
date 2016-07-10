@@ -74,6 +74,24 @@ public class resourceShare extends AppCompatActivity{
             Intent intent1=new Intent(resourceShare.this,uploadFile.class);
             startActivityForResult(intent1, 1);
             break;
+        case 3:
+            Intent intent2=new Intent(resourceShare.this,editShare.class);
+            startActivityForResult(intent2,2);
+            break;
+        case 4:
+            Intent intent3=new Intent(resourceShare.this,editShare.class);
+            startActivityForResult(intent3,3);
+            break;
+        case 5:
+            Intent intent4=new Intent(resourceShare.this,editShare.class);
+            startActivityForResult(intent4,4);
+            break;
+        case 6:
+            Intent intent5=new Intent(resourceShare.this,editShare.class);
+            startActivityForResult(intent5,5);
+            break;
+        default:
+            break;
     }
         return super.onContextItemSelected(item);
     }
@@ -85,15 +103,47 @@ public class resourceShare extends AppCompatActivity{
         {
             Bundle bundle1=data.getExtras();
             String filename=bundle1.getString("filename");
-            System.out.println(filename);
+
             shareItem shareItem1=new shareItem(0,R.drawable.b,"Rail","分享了一个"+filename,"www.baidu.com");
             list.add(shareItem1);
             myShareItemAdapter.notifyDataSetChanged();
-            Toast.makeText(this,"aaaaaa",Toast.LENGTH_LONG).show();
+
         }
-        else
+        else if (requestCode==2&&resultCode==RESULT_OK&&data!=null)
         {
-            System.out.println("fail");
+            Bundle bundle2=data.getExtras();
+            String webPath=bundle2.getString("webPath");
+
+            shareItem shareItem1=new shareItem(1,R.drawable.b,"Rail","分享了一份试卷",webPath);
+            list.add(shareItem1);
+            myShareItemAdapter.notifyDataSetChanged();
+        }
+        else if (requestCode==3&&resultCode==RESULT_OK&&data!=null)
+        {
+            Bundle bundle2=data.getExtras();
+            String webPath=bundle2.getString("webPath");
+
+            shareItem shareItem1=new shareItem(1,R.drawable.b,"Rail","分享了一份电子书",webPath);
+            list.add(shareItem1);
+            myShareItemAdapter.notifyDataSetChanged();
+        }
+        else if (requestCode==4&&resultCode==RESULT_OK&&data!=null)
+        {
+            Bundle bundle2=data.getExtras();
+            String webPath=bundle2.getString("webPath");
+
+            shareItem shareItem1=new shareItem(1,R.drawable.b,"Rail","分享了一份课后习题答案",webPath);
+            list.add(shareItem1);
+            myShareItemAdapter.notifyDataSetChanged();
+        }
+        else if (requestCode==5&&resultCode==RESULT_OK&&data!=null)
+        {
+            Bundle bundle2=data.getExtras();
+            String webPath=bundle2.getString("webPath");
+
+            shareItem shareItem1=new shareItem(1,R.drawable.b,"Rail","分享了一份PPT",webPath);
+            list.add(shareItem1);
+            myShareItemAdapter.notifyDataSetChanged();
         }
 
     }
