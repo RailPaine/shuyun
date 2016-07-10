@@ -113,6 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="资源分享"
+            android:id="@+id/bookdetail_resourceshare"
             >
 
         </com.gc.materialdesign.views.ButtonRectangle>
