@@ -14,7 +14,7 @@ import com.gc.materialdesign.views.ButtonRectangle;
  */
 public class bookDetail extends AppCompatActivity {
 
-    private ButtonRectangle question,resourceShare;
+    private ButtonRectangle question,resourceShare,socialShare;
 
 
     @Override
@@ -36,6 +36,14 @@ public class bookDetail extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent1=new Intent(bookDetail.this,resourceShare.class);
                 startActivity(intent1);
+            }
+        });
+        socialShare=(ButtonRectangle)findViewById(R.id.bookdetail_social);
+        socialShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2=new Intent(bookDetail.this,social.class);
+                startActivity(intent2);
             }
         });
     }

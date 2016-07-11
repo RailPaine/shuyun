@@ -54,6 +54,12 @@
         <activity android:name=".editShare">
 
         </activity>
+        <activity android:name=".social">
+
+        </activity>
+        <activity android:name=".questionDetail">
+
+        </activity>
     </application>
 
 </manifest>

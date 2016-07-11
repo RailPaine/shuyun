@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -77,5 +78,23 @@ public class question extends AppCompatActivity {
         simpleAdapter=new SimpleAdapter(this,arrayList,R.layout.question_item,new String[]{"questionImage","questionPerson","question","quetionTime"},
                 new int[]{R.id.question_image,R.id.question_person,R.id.question,R.id.question_time});
         listView.setAdapter(simpleAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(question.this,questionDetail.class);
+                Bundle bundle=new Bundle();
+                HashMap<String,Object>map=arrayList.get(position);
+                int imgid=(int)map.get("questionImage");
+                String username=(String)map.get("questionPerson");
+                String question=(String)map.get("question");
+                String questiontime=(String)map.get("quesitonTime");
+                bundle.putInt("questionImage",imgid);
+                bundle.putString("questionPerson", username);
+                bundle.putString("question",question);
+                bundle.putString("quesitonTime","一小时前");
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:id="@+id/questiondetail_item_name"
+        android:textSize="24sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:textStyle="bold"
+        />
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/questiondetail_item_userimg"
+        android:layout_below="@+id/questiondetail_item_name"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:scaleType="fitXY"
+
+        />
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/questiondetail_item_answer"
+        android:layout_toRightOf="@+id/questiondetail_item_name"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/questiondetail_item_time"
+        android:layout_below="@+id/questiondetail_item_answer"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:textSize="16sp"
+        />
+</RelativeLayout>
