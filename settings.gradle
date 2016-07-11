@@ -1,1 +1,1 @@
-include ':app', ':materialList', 'mm:app'
+include ':app', ':materialList'

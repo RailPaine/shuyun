@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import socialActivity.ItemView;
 
 /**
  * Created by rail on 2016/7/8.

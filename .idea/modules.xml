@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/materialList/materialList.iml" filepath="$PROJECT_DIR$/materialList/materialList.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mm/mm.iml" filepath="$PROJECT_DIR$/mm/mm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mm/app/mm-app.iml" filepath="$PROJECT_DIR$/mm/app/mm-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/shuyun.iml" filepath="$PROJECT_DIR$/shuyun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/shuyun-app.iml" filepath="$PROJECT_DIR$/app/shuyun-app.iml" />
     </modules>
   </component>
 </project>
