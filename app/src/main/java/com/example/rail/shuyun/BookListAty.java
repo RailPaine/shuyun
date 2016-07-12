@@ -72,6 +72,8 @@ public class BookListAty extends AppCompatActivity {
         title_leftBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(BookListAty.this,MainActivity.class);
+                startActivity(intent);
                 BookListAty.this.finish();
             }
         });

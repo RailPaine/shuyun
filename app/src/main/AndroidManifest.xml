@@ -55,7 +55,7 @@
         <activity android:name=".bookDetailAty">
 
         </activity>
-        <activity android:name=".question">
+        <activity android:name=".questionAty">
 
         </activity>
         <activity android:name=".editQuestion">
@@ -72,13 +72,14 @@
         <activity android:name=".editShare">
 
         </activity>
-        <activity android:name=".questionDetail">
+        <activity android:name=".questionDetailAty">
 
         </activity>
 
         <activity android:name=".SocialShareAty"></activity>
         <activity android:name=".detail.SocialShareDetailAty"></activity>
         <activity android:name=".write.WriteSocialAty"></activity>
+        <activity android:name=".write.WriteQuestionAty"></activity>
     </application>
 
 </manifest>

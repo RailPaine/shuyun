@@ -61,7 +61,9 @@ public class bookDetailAty extends AppCompatActivity {
         question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(bookDetailAty.this,question.class);
+                Intent intent=new Intent(bookDetailAty.this,questionAty.class);
+                bundle.putString("bookId",bookdetail.getObjectId());
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -70,6 +72,8 @@ public class bookDetailAty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1=new Intent(bookDetailAty.this,resourceShare.class);
+                bundle.putString("bookId",bookdetail.getObjectId());
+                intent1.putExtras(bundle);
                 startActivity(intent1);
             }
         });

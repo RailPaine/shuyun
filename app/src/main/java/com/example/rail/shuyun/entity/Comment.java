@@ -10,6 +10,15 @@ public class Comment extends BmobObject {
     private String content;
     private Post post;
     private Person author;
+    private Question question;
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
 
     public String getContent() {
         return content;
