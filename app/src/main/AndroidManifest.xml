@@ -26,7 +26,7 @@
         android:theme="@style/AppTheme"
 
         >
-        <activity android:name=".logIn">
+        <activity android:name=".LoginAty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,7 +45,7 @@
         <activity android:name=".me">
 
         </activity>
-        <activity android:name=".bookList">
+        <activity android:name=".BookListAty">
 
         </activity>
         <activity android:name=".bookDetail">

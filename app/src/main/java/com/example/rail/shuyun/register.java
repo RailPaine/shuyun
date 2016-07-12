@@ -1,14 +1,11 @@
 package com.example.rail.shuyun;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +28,8 @@ public class register extends AppCompatActivity {
     private MaterialEditText userName, code, password;
     private ButtonRectangle btn;
 
+    private ImageButton titile_leftBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +45,7 @@ public class register extends AppCompatActivity {
     }
 
     public void initView() {
+        titile_leftBtn= (ImageButton) findViewById(R.id.title_leftImageBtn);
         textView = (TextView) findViewById(R.id.register_identifying_code);
         userName= (MaterialEditText) findViewById(R.id.register_user_text);
         code= (MaterialEditText) findViewById(R.id.register_identifying);
@@ -63,6 +63,12 @@ public class register extends AppCompatActivity {
                 }
             }
         });
+        titile_leftBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                register.this.finish();
+            }
+        });
     }
     private void SendToRegister(String phone, final String password)
     {
@@ -75,7 +81,7 @@ public class register extends AppCompatActivity {
                 if(e==null){
                     //注册成功
                     Toast.makeText(register.this,"登陆成功",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(register.this,logIn.class);
+                    Intent intent=new Intent(register.this,LoginAty.class);
                     startActivity(intent);
                 }else{
                     //注册失败，抛出错误

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.andexert.library.RippleView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/booklist_recy"
-        >
+    android:orientation="vertical">
 
-    </android.support.v7.widget.RecyclerView>
-</com.andexert.library.RippleView>
+    <include layout="@layout/include_title"/>
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/booklist_listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal">
+
+
+    <ImageButton
+        android:id="@+id/title_leftImageBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/abc_ic_ab_back_mtrl_am_alpha"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/title_middleTextView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="书云"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/title_rightBtn"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:text="注册/重新登陆"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="right|center"
+        android:visibility="gone"
+        />
+</LinearLayout>
