@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/bookdetail_author"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="出版社："
             android:textSize="18sp" />
 
@@ -66,10 +66,10 @@
             android:id="@+id/bookdetail_publish_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/bookdetail_author_tv"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/bookdetail_publish"
+            android:layout_alignBottom="@+id/bookdetail_publish"
             android:textSize="18sp"
             android:text="电子出版社"/>
     </RelativeLayout>

@@ -55,7 +55,7 @@ public class BookListAdapter extends BaseAdapter{
 
         viewHolder.bookName.setText(list.get(position).getBookname());
         viewHolder.bookAuthor.setText(list.get(position).getAuthor());
-        viewHolder.bookNumber.setText(position+".");
+        viewHolder.bookNumber.setText((position+1)+".");
         return convertView;
     }
 

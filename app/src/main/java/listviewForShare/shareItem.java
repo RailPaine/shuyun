@@ -3,15 +3,15 @@ package listviewForShare;
 /**
  * Created by rail on 2016/7/8.
  */
-public class shareItem  {
+public class shareItem {
 
     private int type;
 
     //private String imgPath;
-    private  int imgId;
+    private int imgId;
     private String title;
     private String content;
-   private String contentPath;
+    private String contentPath;
 
     public shareItem(int type, int imgId, String title, String content, String contentPath) {
         this.type = type;

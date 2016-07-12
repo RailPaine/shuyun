@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.rey.material.widget.ListView;
 
 import java.util.ArrayList;
@@ -25,31 +26,38 @@ import listviewForShare.shareItem;
 public class resourceShare extends AppCompatActivity{
 
     private ArrayList<shareItem>list=new ArrayList<shareItem>();
-    private ImageButton imageButton;
-    private ListView listView;
+    private ImageButton title_leftBtn;
+    private Button title_rightBtn;
+    private PullToRefreshListView listView;
     private MyShareItemAdapter myShareItemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resourceshare);
-        imageButton=(ImageButton)findViewById(R.id.titlebar_done);
-       imageButton.setImageResource(R.drawable.ic_create_white_24dp);
-        registerForContextMenu(imageButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                imageButton.showContextMenu();
-            }
-        });
+        initView();
+        initListener();
+    }
 
-        listView=(ListView)findViewById(R.id.listview_resourceshare);
+    private void initView(){
+        title_leftBtn=(ImageButton)findViewById(R.id.titlebar_done);
+        title_rightBtn= (Button) findViewById(R.id.title_rightBtn);
+        title_rightBtn.setVisibility(View.VISIBLE);
+//        imageButton.setImageResource(R.drawable.ic_create_white_24dp);
+        registerForContextMenu(title_rightBtn);
+        listView=(PullToRefreshListView)findViewById(R.id.listview_resourceshare);
         myShareItemAdapter=new MyShareItemAdapter(this,list);
 
         listView.setAdapter(myShareItemAdapter);
-
     }
-
+    private void initListener(){
+        title_rightBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                title_rightBtn.showContextMenu();
+            }
+        });
+    }
 
     @Override
     public void onCreateContextMenu(ContextMenu menu,View v,ContextMenu.ContextMenuInfo menuInfo)

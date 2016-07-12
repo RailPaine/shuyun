@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/title_leftImageBtn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:background="@android:color/transparent"
@@ -26,19 +26,18 @@
         android:gravity="center_vertical"
         android:text="书云"
         android:textColor="@color/white"
-        android:textSize="25sp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/title_rightBtn"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginRight="10dp"
         android:layout_gravity="center"
-        android:background="@android:color/transparent"
-        android:text="注册/重新登陆"
+        android:background="@android:drawable/ic_menu_add"
         android:textColor="@color/white"
-        android:textSize="14sp"
         android:gravity="right|center"
+        android:scaleType="fitXY"
         android:visibility="gone"
         />
 </LinearLayout>

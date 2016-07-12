@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<ImageView
-    android:layout_width="48dp"
-    android:layout_height="48dp"
-    android:id="@+id/share_file_image"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    />
+
+    <ImageView
+        android:id="@+id/share_file_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher"/>
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
         android:id="@+id/share_file_title"
-        android:layout_toRightOf="@+id/share_file_image"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:textSize="24sp"
-        android:textColor="@color/Indigo_nav_color"
-        />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:id="@+id/share_file_content"
-        android:layout_toRightOf="@+id/share_file_title"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        />
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/share_file_image"
+        android:textColor="@color/Indigo_nav_color"
+        android:textSize="24sp"
+        android:text="#翁灿标#"/>
+
+    <TextView
+        android:id="@+id/share_file_content"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/share_file_title"
+        android:text="分享了内容"
+        android:gravity="center"/>
+
     <Button
+        android:id="@+id/share_file_download"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/share_file_download"
         android:layout_below="@+id/share_file_title"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="20dp"
-        android:text="点击下载"
-        />
+        android:text="点击下载" />
 </RelativeLayout>

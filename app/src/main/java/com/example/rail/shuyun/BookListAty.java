@@ -3,6 +3,7 @@ package com.example.rail.shuyun;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -61,13 +62,11 @@ public class BookListAty extends AppCompatActivity {
         ColleageName=bundle.getString("Colleage");
         MajorName=bundle.getString("Major");
         GradeName=bundle.getString("Grade");
-        //测试数据
-        booklist.add(new Item("计算机组成","wencabiam.xjijnfj.xxxf"));
-        booklist.add(new Item("计算机组成","wencabiam.xjijnfj.xxxf"));
-        booklist.add(new Item("计算机组成","wencabiam.xxx"));
-        adapter=new BookListAdapter(this,booklist);
-        listView.setAdapter(adapter);
-//        getData();
+//        //测试数据
+//        booklist.add(new Item("计算机组成","wencabiam.xjijnfj.xxxf"));
+//        booklist.add(new Item("计算机组成","wencabiam.xjijnfj.xxxf"));
+//        booklist.add(new Item("计算机组成","wencabiam.xxx"));
+        getData();
     }
     private void initListener(){
         title_leftBtn.setOnClickListener(new View.OnClickListener() {
@@ -106,9 +105,13 @@ public class BookListAty extends AppCompatActivity {
             @Override
             public void done(List<BookCollection> list, BmobException e) {
                 if (e == null) {
-                    Toast.makeText(BookListAty.this, "查询成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BookListAty.this, "书籍列表查询成功", Toast.LENGTH_SHORT).show();
                     booklist=list.get(0).getBookMessage();
-                    adapter.notifyDataSetChanged();
+                    Log.i("TestBookListAty","获取到的数据个数为:"+list.size());
+                    Log.i("TestBookListAty", "获取到的数据第一个是:" + booklist.get(0).getAuthor() + ";" + booklist.get(0).getBookname());
+                    adapter=new BookListAdapter(BookListAty.this,booklist);
+                    listView.setAdapter(adapter);
+                    listView.onRefreshComplete();
                 }else{
                     Toast.makeText(BookListAty.this, "网络错误，请重新刷新", Toast.LENGTH_SHORT).show();
                 }

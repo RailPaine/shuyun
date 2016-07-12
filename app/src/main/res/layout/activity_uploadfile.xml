@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.andexert.library.RippleView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-        <include layout="@layout/titlebar"
-    android:id="@+id/upload_titlebar">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-        </include>
+
+        <include layout="@layout/include_title"/>
+
 
         <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/upload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/upload"
-            android:text="点击上传文件"
-            >
+            android:text="点击上传文件">
 
         </com.gc.materialdesign.views.ButtonRectangle>
+
         <TextView
+            android:id="@+id/upload_filename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/upload_filename"
-            />
-    </LinearLayout>
-</com.andexert.library.RippleView>
+            android:layout_margin="10dp"
+            android:textSize="16sp"/>
+
+</LinearLayout>

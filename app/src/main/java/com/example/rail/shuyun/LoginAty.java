@@ -10,7 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rail.shuyun.constants.UrlConstant;
+import com.example.rail.shuyun.entity.BookCollection;
 import com.example.rail.shuyun.entity.Person;
+import com.example.rail.shuyun.entity.Post;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -88,6 +90,7 @@ public class LoginAty extends AppCompatActivity {
     }
 
     private void SendToLogin(String userName, String userPassword) {
+
         BmobUser bu2 = new BmobUser();
         bu2.setUsername(userName);
         bu2.setPassword(userPassword);

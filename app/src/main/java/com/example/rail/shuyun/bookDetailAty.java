@@ -46,7 +46,7 @@ public class bookDetailAty extends AppCompatActivity {
         initListener();
         bundle=getIntent().getExtras();
         Name=bundle.getString("bookName");
-//        loadData();
+        loadData();
     }
     private void initView(){
         bookName= (TextView) findViewById(R.id.bookdetail_name_tv);
