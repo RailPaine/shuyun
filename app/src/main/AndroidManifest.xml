@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register">
+        <activity android:name=".registerAty">
 
         </activity>
         <activity android:name=".MainActivity">
@@ -48,7 +48,7 @@
         <activity android:name=".BookListAty">
 
         </activity>
-        <activity android:name=".bookDetail">
+        <activity android:name=".bookDetailAty">
 
         </activity>
         <activity android:name=".question">

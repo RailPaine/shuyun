@@ -56,7 +56,7 @@ public class LoginAty extends AppCompatActivity {
         re.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginAty.this, register.class);
+                Intent intent = new Intent(LoginAty.this, registerAty.class);
                 startActivity(intent);
             }
         });

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rail.shuyun.adapter.BookListAdapter;
-import com.example.rail.shuyun.entity.BookList;
+import com.example.rail.shuyun.entity.BookCollection;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
@@ -79,7 +79,7 @@ public class BookListAty extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=new Intent(BookListAty.this,bookDetail.class);
+                Intent intent=new Intent(BookListAty.this,bookDetailAty.class);
                 bundle.putString("bookName",booklist.get(position-1).getBookname());
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -96,15 +96,15 @@ public class BookListAty extends AppCompatActivity {
      * 根据相应的数据获取书籍集合
      */
     private void getData(){
-        BmobQuery<BookList> query=new BmobQuery<>();
+        BmobQuery<BookCollection> query=new BmobQuery<>();
         query.addWhereEqualTo("School", SchoolName);
         query.addWhereEqualTo("Colleage", ColleageName);
         query.addWhereEqualTo("Major", MajorName);
         query.addWhereEqualTo("Grade", GradeName);
 
-        query.findObjects(new FindListener<BookList>() {
+        query.findObjects(new FindListener<BookCollection>() {
             @Override
-            public void done(List<BookList> list, BmobException e) {
+            public void done(List<BookCollection> list, BmobException e) {
                 if (e == null) {
                     Toast.makeText(BookListAty.this, "查询成功", Toast.LENGTH_SHORT).show();
                     booklist=list.get(0).getBookMessage();
