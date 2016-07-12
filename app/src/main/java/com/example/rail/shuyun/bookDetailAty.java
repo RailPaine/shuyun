@@ -78,6 +78,8 @@ public class bookDetailAty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent2=new Intent(bookDetailAty.this,SocialShareAty.class);
+                bundle.putString("bookId",bookdetail.getObjectId());
+                intent2.putExtras(bundle);
                 startActivity(intent2);
             }
         });

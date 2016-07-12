@@ -21,6 +21,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
+        android:name=".Application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -59,9 +60,7 @@
         <activity android:name=".editQuestion">
 
         </activity>
-        <activity android:name=".resourceShare"
-
-            >
+        <activity android:name=".resourceShare">
 
         </activity>
         <activity android:name=".uploadFile"
@@ -75,6 +74,10 @@
         <activity android:name=".questionDetail">
 
         </activity>
+
+        <activity android:name=".SocialShareAty"></activity>
+        <activity android:name=".detail.SocialShareDetailAty"></activity>
+        <activity android:name=".write.WriteSocialAty"></activity>
     </application>
 
 </manifest>
