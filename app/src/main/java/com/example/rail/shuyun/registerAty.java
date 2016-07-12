@@ -23,7 +23,6 @@ import util.CountDownTimerUtils;
  */
 public class registerAty extends AppCompatActivity {
 
-
     private TextView textView;
     private MaterialEditText userName, code, password;
     private ButtonRectangle btn;

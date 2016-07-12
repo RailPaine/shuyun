@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/include_title" />
+
+    <EditText
+        android:id="@+id/write_social_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:gravity="left|top"
+        android:hint="请输入书籍名称"
+        android:minLines="3"
+        android:paddingLeft="10dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/write_book_bookImage1"
+        android:layout_width="102dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="10dp">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="100dp"
+            android:layout_height="128dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/compose_pic_add_more"></ImageView>
+
+        <ImageView
+            android:id="@+id/iv_delete_image"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:padding="2dp"
+            android:src="@mipmap/image_delete" />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/write_social_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorPrimary"
+        android:text="确定"
+        android:textSize="20sp"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

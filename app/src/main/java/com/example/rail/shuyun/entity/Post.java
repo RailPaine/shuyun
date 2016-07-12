@@ -1,6 +1,7 @@
 package com.example.rail.shuyun.entity;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.datatype.BmobRelation;
 
 /**
@@ -10,8 +11,8 @@ public class Post extends BmobObject {
 
     private String Content;
     private Person Author;
-    private BmobRelation Likes;
     private BookMessageDetail book;
+    private BmobFile PostImage;
 
     public String getContent() {
         return Content;
@@ -29,13 +30,6 @@ public class Post extends BmobObject {
         Author = author;
     }
 
-    public BmobRelation getLikes() {
-        return Likes;
-    }
-
-    public void setLikes(BmobRelation likes) {
-        Likes = likes;
-    }
 
     public BookMessageDetail getBook() {
         return book;
@@ -43,5 +37,13 @@ public class Post extends BmobObject {
 
     public void setBook(BookMessageDetail book) {
         this.book = book;
+    }
+
+    public BmobFile getPostImage() {
+        return PostImage;
+    }
+
+    public void setPostImage(BmobFile postImage) {
+        PostImage = postImage;
     }
 }
