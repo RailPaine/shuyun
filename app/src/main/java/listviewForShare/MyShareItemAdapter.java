@@ -1,7 +1,9 @@
 package listviewForShare;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.view.LayoutInflater;
@@ -10,13 +12,22 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rail.shuyun.R;
+import com.example.rail.shuyun.resourceShare;
+import com.gc.materialdesign.views.ProgressBarDeterminate;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import cn.bmob.v3.datatype.BmobFile;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.DownloadFileListener;
 
 
 /**
@@ -29,10 +40,12 @@ public class MyShareItemAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private ArrayList<shareItem>list;
+    private Context context;
 
     public MyShareItemAdapter(Context context,ArrayList<shareItem> list) {
         this.list = list;
         inflater=LayoutInflater.from(context);
+        this.context=context;
     }
 
     @Override
@@ -62,7 +75,7 @@ public class MyShareItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        shareItem shareItem=list.get(position);
+        final shareItem shareItem=list.get(position);
         int type=shareItem.getType();
         ViewHolderFile viewHolderFile=null;
         ViewHolderLink viewHolderLink=null;
@@ -73,14 +86,54 @@ public class MyShareItemAdapter extends BaseAdapter {
                 case TYPE_FILE:
                     viewHolderFile=new ViewHolderFile();
                     convertView=inflater.inflate(R.layout.list_item_file,null);
+                    viewHolderFile.download=(Button)convertView.findViewById(R.id.share_file_download);
                     viewHolderFile.imgForFile=(ImageView)convertView.findViewById(R.id.share_file_image);
                     viewHolderFile.titleForFile=(TextView)convertView.findViewById(R.id.share_file_title);
                     viewHolderFile.contentForFile=(TextView)convertView.findViewById(R.id.share_file_content);
-                    viewHolderFile.download=(Button)convertView.findViewById(R.id.share_file_download);
                     viewHolderFile.imgForFile.setImageResource(shareItem.getImgId());
                     viewHolderFile.titleForFile.setText(shareItem.getTitle());
                     viewHolderFile.contentForFile.setText(shareItem.getContent());
                     //此处给点击按钮下载的代码
+                    viewHolderFile.download.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BmobFile bmobFile=new BmobFile(shareItem.getContent(),"",shareItem.getContentPath());
+                            File path=new File(Environment.getExternalStorageDirectory()+"/shuyun");
+                            if (!path.exists())
+                            {
+                                path.mkdir();
+                            }
+                            File file=new File(path,bmobFile.getFilename());
+                            final ProgressDialog progressDialog=new ProgressDialog(context);
+                            progressDialog.setIndeterminate(false);
+                            progressDialog.setMax(100);
+                            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                            progressDialog.setTitle("下载进度");
+                            progressDialog.show();
+
+                            bmobFile.download(file,new DownloadFileListener() {
+                                @Override
+                                public void done(String s, BmobException e) {
+                                    if(e==null)
+                                    {
+                                        progressDialog.dismiss();
+                                        Toast.makeText(context,"下载成功！保存路径为："+s,Toast.LENGTH_LONG).show();
+                                    }
+                                    else
+                                    {
+                                        System.out.println("fail");
+                                    }
+                                }
+
+                                @Override
+                                public void onProgress(Integer integer, long l) {
+                                    int progress=integer.intValue();
+                                  progressDialog.setProgress(progress);
+                                   progressDialog.setMessage("已下载"+progress+"%");
+                                }
+                            });
+                        }
+                    });
                     convertView.setTag(viewHolderFile);
                     break;
                 case TYPE_LINK:
@@ -93,9 +146,10 @@ public class MyShareItemAdapter extends BaseAdapter {
                     viewHolderLink.imgForLink.setImageResource(shareItem.getImgId());
                     viewHolderLink.titleForLink.setText(shareItem.getTitle());
                     viewHolderLink.contentForLink.setText(shareItem.getContent());
-                    viewHolderLink.linkPath.setText(shareItem.getContentPath());
+
                     viewHolderLink.linkPath.setAutoLinkMask(Linkify.WEB_URLS);
                     viewHolderLink.linkPath.setMovementMethod(LinkMovementMethod.getInstance());
+                    viewHolderLink.linkPath.setText(shareItem.getContentPath());
                     convertView.setTag(viewHolderLink);
                     break;
                 default:
@@ -113,15 +167,56 @@ public class MyShareItemAdapter extends BaseAdapter {
                     viewHolderFile.titleForFile.setText(shareItem.getTitle());
                     viewHolderFile.contentForFile.setText(shareItem.getContent());
                     //此处给点击按钮下载的代码
+                    viewHolderFile.download.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BmobFile bmobFile=new BmobFile(shareItem.getContent(),"",shareItem.getContentPath());
+                            File path=new File(Environment.getExternalStorageDirectory()+"/shuyun");
+                            if (!path.exists())
+                            {
+                                path.mkdir();
+                            }
+                            File file=new File(path,bmobFile.getFilename());
+                            final ProgressDialog progressDialog=new ProgressDialog(context);
+                            progressDialog.setIndeterminate(false);
+                            progressDialog.setMax(100);
+                            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                            progressDialog.setTitle("下载进度");
+                            progressDialog.show();
+                            bmobFile.download(file,new DownloadFileListener() {
+                                @Override
+                                public void done(String s, BmobException e) {
+                                    if(e==null)
+                                    {
+                                        progressDialog.dismiss();
+                                        Toast.makeText(context,"下载成功！保存路径为："+s,Toast.LENGTH_LONG).show();
+                                    }
+                                    else
+                                    {
+                                        System.out.println("fail");
+                                        System.out.println(e.getErrorCode()+e.getMessage());
+                                    }
+                                }
+
+                                @Override
+                                public void onProgress(Integer integer, long l) {
+                                    int progress=integer.intValue();
+                                    progressDialog.setProgress(progress);
+                                    progressDialog.setMessage("已下载"+progress+"%");
+                                }
+                            });
+                        }
+                    });
                     break;
                 case TYPE_LINK:
                     viewHolderLink=(ViewHolderLink)convertView.getTag();
                     viewHolderLink.imgForLink.setImageResource(shareItem.getImgId());
                     viewHolderLink.titleForLink.setText(shareItem.getTitle());
                     viewHolderLink.contentForLink.setText(shareItem.getContent());
-                    viewHolderLink.linkPath.setText(shareItem.getContentPath());
+
                     viewHolderLink.linkPath.setAutoLinkMask(Linkify.WEB_URLS);
                     viewHolderLink.linkPath.setMovementMethod(LinkMovementMethod.getInstance());
+                    viewHolderLink.linkPath.setText(shareItem.getContentPath());
                     break;
                 default:
                     break;
@@ -136,6 +231,7 @@ public class MyShareItemAdapter extends BaseAdapter {
         private TextView titleForFile;
         private TextView contentForFile;
         private Button download;
+
     }
 
     class ViewHolderLink
@@ -144,5 +240,6 @@ public class MyShareItemAdapter extends BaseAdapter {
         private  TextView titleForLink;
         private TextView contentForLink;
         private TextView linkPath;
+
     }
 }

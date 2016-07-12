@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -11,7 +12,7 @@ import android.widget.ImageButton;
  * Created by rail on 2016/7/10.
  */
 public class editShare extends AppCompatActivity {
-    private ImageButton done;
+    private Button done;
     private EditText editText;
 
     @Override
@@ -19,7 +20,9 @@ public class editShare extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editshare);
         editText=(EditText)findViewById(R.id.editshare_ev);
-        done=(ImageButton)findViewById(R.id.titlebar_done);
+        done=(Button)findViewById(R.id.title_rightBtn);
+        done.setVisibility(View.VISIBLE);
+        done.setBackgroundResource(R.drawable.ic_done_white_24dp);
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

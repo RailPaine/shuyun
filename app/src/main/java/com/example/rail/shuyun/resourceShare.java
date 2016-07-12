@@ -111,8 +111,8 @@ public class resourceShare extends AppCompatActivity{
         {
             Bundle bundle1=data.getExtras();
             String filename=bundle1.getString("filename");
-
-            shareItem shareItem1=new shareItem(0,R.drawable.b,"Rail","分享了一个"+filename,"www.baidu.com");
+            String filepath=bundle1.getString("filepath");
+            shareItem shareItem1=new shareItem(0,R.drawable.b,"Rail","分享了一个"+filename,filepath);
             list.add(shareItem1);
             myShareItemAdapter.notifyDataSetChanged();
 

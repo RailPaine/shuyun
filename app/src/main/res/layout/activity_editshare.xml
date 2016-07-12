@@ -11,17 +11,11 @@
         android:id="@+id/editshare_ev"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@android:color/transparent"
         android:paddingLeft="10dp"
         android:layout_marginTop="5dp"
         android:hint="请输入你的链接"
-        android:drawablePadding="10dp"/>
+       />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="确定"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
+
 
 </LinearLayout>

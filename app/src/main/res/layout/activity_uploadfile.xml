@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -9,10 +10,10 @@
 
 
         <com.gc.materialdesign.views.ButtonRectangle
-            android:id="@+id/upload"
+            android:id="@+id/choosefile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="点击上传文件">
+            android:text="点击选择文件">
 
         </com.gc.materialdesign.views.ButtonRectangle>
 
@@ -21,6 +22,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:autoLink="all"
             android:textSize="16sp"/>
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/upload"
+        android:text="上传文件"
+        >
 
+    </com.gc.materialdesign.views.ButtonRectangle>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prgress_tv"
+        android:layout_marginTop="20dp"
+        android:textSize="16dp"
+        />
+
+    <com.gc.materialdesign.views.ProgressBarDeterminate
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_upload"
+        android:layout_below="@+id/prgress_tv"
+        android:layout_marginTop="10dp"
+        app:min="0"
+        app:max="100"
+        >
+
+    </com.gc.materialdesign.views.ProgressBarDeterminate>
 </LinearLayout>
