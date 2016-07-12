@@ -21,7 +21,7 @@ import util.CountDownTimerUtils;
 /**
  * Created by rail on 2016/6/29.
  */
-public class register extends AppCompatActivity {
+public class registerAty extends AppCompatActivity {
 
 
     private TextView textView;
@@ -66,7 +66,7 @@ public class register extends AppCompatActivity {
         titile_leftBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                register.this.finish();
+                registerAty.this.finish();
             }
         });
     }
@@ -80,8 +80,8 @@ public class register extends AppCompatActivity {
             public void done(Person s, BmobException e) {
                 if(e==null){
                     //注册成功
-                    Toast.makeText(register.this,"登陆成功",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(register.this,LoginAty.class);
+                    Toast.makeText(registerAty.this,"登陆成功",Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(registerAty.this,LoginAty.class);
                     startActivity(intent);
                 }else{
                     //注册失败，抛出错误

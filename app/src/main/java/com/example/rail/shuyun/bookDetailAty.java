@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.rail.shuyun.entity.Bookdetail;
+import com.example.rail.shuyun.entity.BookMessageDetail;
 import com.gc.materialdesign.views.ButtonRectangle;
 
 import java.util.List;
@@ -19,7 +19,7 @@ import cn.bmob.v3.listener.FindListener;
 /**
  * Created by rail on 2016/7/6.
  */
-public class bookDetail extends AppCompatActivity {
+public class bookDetailAty extends AppCompatActivity {
 
     private ButtonRectangle question,resourceShare,socialShare;
 
@@ -34,7 +34,7 @@ public class bookDetail extends AppCompatActivity {
     private Bundle bundle;
     private String Name;
 
-    private Bookdetail bookdetail;
+    private BookMessageDetail bookdetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,7 @@ public class bookDetail extends AppCompatActivity {
         question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(bookDetail.this,question.class);
+                Intent intent=new Intent(bookDetailAty.this,question.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +69,7 @@ public class bookDetail extends AppCompatActivity {
         resourceShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1=new Intent(bookDetail.this,resourceShare.class);
+                Intent intent1=new Intent(bookDetailAty.this,resourceShare.class);
                 startActivity(intent1);
             }
         });
@@ -77,7 +77,7 @@ public class bookDetail extends AppCompatActivity {
         socialShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2=new Intent(bookDetail.this,SocialShareAty.class);
+                Intent intent2=new Intent(bookDetailAty.this,SocialShareAty.class);
                 startActivity(intent2);
             }
         });
@@ -87,19 +87,19 @@ public class bookDetail extends AppCompatActivity {
         title_leftBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(bookDetail.this, BookListAty.class);
+                Intent intent=new Intent(bookDetailAty.this, BookListAty.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
-                bookDetail.this.finish();
+                bookDetailAty.this.finish();
             }
         });
     }
     private void loadData(){
-        BmobQuery<Bookdetail> bmobQuery=new BmobQuery<>();
+        BmobQuery<BookMessageDetail> bmobQuery=new BmobQuery<>();
         bmobQuery.addWhereEqualTo("bookName",Name);
-        bmobQuery.findObjects(new FindListener<Bookdetail>() {
+        bmobQuery.findObjects(new FindListener<BookMessageDetail>() {
             @Override
-            public void done(List<Bookdetail> list, BmobException e) {
+            public void done(List<BookMessageDetail> list, BmobException e) {
                 if (e == null) {
                     bookdetail = list.get(0);
                     setData();
