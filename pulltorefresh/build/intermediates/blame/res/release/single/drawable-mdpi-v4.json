@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\shuyun\\pulltorefresh\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\default_ptr_flip.png",
+        "source": "D:\\shuyun\\pulltorefresh\\src\\main\\res\\drawable-mdpi\\default_ptr_flip.png"
+    },
+    {
+        "merged": "D:\\shuyun\\pulltorefresh\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\indicator_arrow.png",
+        "source": "D:\\shuyun\\pulltorefresh\\src\\main\\res\\drawable-mdpi\\indicator_arrow.png"
+    },
+    {
+        "merged": "D:\\shuyun\\pulltorefresh\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\default_ptr_rotate.png",
+        "source": "D:\\shuyun\\pulltorefresh\\src\\main\\res\\drawable-mdpi\\default_ptr_rotate.png"
+    }
+]
